@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:component xmlns="http://www.w3.org/1999/xhtml"
+              xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+              xmlns:f="http://xmlns.jcp.org/jsf/core"
+              xmlns:p="http://primefaces.org/ui"
+              xmlns:tst="http://at.test.test/jsf-taglib"
+              xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+              xmlns:test="http://xmlns.jcp.org/jsf/composite/components/test">
+    <cc:interface>
+        <cc:attribute name="value"
+                      required="true"
+                      type="org.primefaces.test.Item"/>
+
+        <cc:attribute name="selectItems"/>
+
+        <cc:attribute name="updateOnChange"/>
+
+        <cc:attribute name="required"
+                      default="false"/>
+    </cc:interface>
+    <cc:implementation>
+
+        <div id="#{cc.clientId}">
+            <tst:selectOneMenuBase selectItems="#{cc.attrs.selectItems}"
+                                   itemLabel="name"
+                                   value="#{cc.attrs.value}"
+                                   required="#{cc.attrs.required}"
+                                   updateOnChange="#{cc.attrs.updateOnChange}"/>
+        </div>
+
+    </cc:implementation>
+</ui:component>
