@@ -15,11 +15,6 @@
     </context-param>
 
     <context-param>
-        <param-name>jakarta.faces.FACELETS_LIBRARIES</param-name>
-        <param-value>/resources/taglib/test.taglib.xml</param-value>
-    </context-param>
-
-    <context-param>
         <param-name>primefaces.THEME</param-name>
         <param-value>saga</param-value>
     </context-param>

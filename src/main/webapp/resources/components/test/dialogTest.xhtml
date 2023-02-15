@@ -4,7 +4,6 @@
               xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
               xmlns:f="http://xmlns.jcp.org/jsf/core"
               xmlns:p="http://primefaces.org/ui"
-              xmlns:tst="http://at.test.test/jsf-taglib"
               xmlns:test="http://xmlns.jcp.org/jsf/composite/components/test">
     <cc:interface>
 
@@ -17,13 +16,11 @@
 
             <test:dialogBase id="dialog"
                              header="Test Dialog"
-                             visible="#{testDialogAction.visible}"
-                             update="#{cc.clientId} #{cc.attrs.update}">
+                             visible="#{testDialogAction.visible}">
 
                 <test:selectItem value="#{testDialogAction.selectedItem}"
                                  selectItems="#{testDialogAction.items}"
-                                 updateOnChange="#{cc.clientId}"
-                                 required="true"/>
+                                 updateOnChange="#{cc.clientId}"/>
 
             </test:dialogBase>
 

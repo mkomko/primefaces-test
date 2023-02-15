@@ -14,8 +14,6 @@
               xmlns:p="http://primefaces.org/ui">
    <cc:interface>
 
-      <cc:attribute name="update"/>
-
       <cc:attribute name="header"/>
 
       <cc:attribute name="visible"
@@ -29,9 +27,6 @@
       <h:form id="dialogForm">
 
          <p:dialog id="dialog"
-                   widgetVar="#{cc.clientId}"
-                   modal="true"
-                   responsive="true"
                    visible="#{cc.attrs.visible}">
 
             <f:facet name="header">

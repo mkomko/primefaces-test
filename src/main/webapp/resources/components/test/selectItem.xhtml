@@ -14,18 +14,23 @@
         <cc:attribute name="selectItems"/>
 
         <cc:attribute name="updateOnChange"/>
-
-        <cc:attribute name="required"
-                      default="false"/>
     </cc:interface>
     <cc:implementation>
 
         <div id="#{cc.clientId}">
-            <tst:selectOneMenuBase selectItems="#{cc.attrs.selectItems}"
-                                   itemLabel="name"
-                                   value="#{cc.attrs.value}"
-                                   required="#{cc.attrs.required}"
-                                   updateOnChange="#{cc.attrs.updateOnChange}"/>
+            <p:selectOneMenu id="items"
+                             converter="omnifaces.SelectItemsIndexConverter"
+                             value="#{cc.attrs.value}">
+                <f:selectItems value="#{cc.attrs.selectItems}"
+                               var="i"
+                               itemLabel="#{i.name}"/>
+                <p:ajax event="change"
+                        update="#{cc.attrs.updateOnChange}"/>
+            </p:selectOneMenu>
+
+            <p:messages>
+                <p:autoUpdate/>
+            </p:messages>
         </div>
 
     </cc:implementation>
