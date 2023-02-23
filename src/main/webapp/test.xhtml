@@ -1,20 +1,13 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="template.xhtml">
 
-    <h:head>
-        <title>PrimeFaces Test</title>
-        <h:outputScript name="test.js" />
-    </h:head>
-    <h:body>
+    <ui:define name="header">
+        <ui:include src="test_header.xhtml"/>
+    </ui:define>
 
-        <h1>#{testView.string}</h1>
-        <h:form id="frmTest">
+    <ui:define name="content">
+        <ui:include src="test_content.xhtml"/>
+    </ui:define>
 
-        </h:form>
-
-    </h:body>
-</html>
+</ui:composition>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) certex Information Technology GmbH - All Rights Reserved.
+  Unauthorized copying of this file, via any medium is strictly prohibited.
+  This file is proprietary and confidential.
+  -->
+
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+             xmlns:p="http://primefaces.org/ui">
+
+    <p:outputPanel id="outputPanel">
+
+        <p:commandButton id="button"
+                         value="Button"
+                         update=":form:toolbar"
+                         action="#{testView.button}"/>
+
+    </p:outputPanel>
+
+</ui:fragment>

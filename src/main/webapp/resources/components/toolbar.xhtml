@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) certex Information Technology GmbH - All Rights Reserved.
+  Unauthorized copying of this file, via any medium is strictly prohibited.
+  This file is proprietary and confidential.
+  -->
+
+<ui:component xmlns="http://www.w3.org/1999/xhtml"
+              xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+              xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <cc:interface>
+        <cc:facet name="header"/>
+        <cc:facet name="subHeader"/>
+    </cc:interface>
+    <cc:implementation>
+        <div id="#{cc.clientId}"
+             class="flex">
+
+            <div class="header-content">
+                <div class="header-route-bar">
+                    <ul>
+                        <li>
+                            <span class="header-title">
+                                <cc:renderFacet name="header"/>
+                            </span>
+                            <span class="header-subtitle">
+                                <cc:renderFacet name="subHeader"/>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </cc:implementation>
+</ui:component>
