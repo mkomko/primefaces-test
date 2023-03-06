@@ -24,4 +24,7 @@ public class TestView implements Serializable {
         string = "Welcome to PrimeFaces!!!";
     }
 
+    public void action() {
+        System.out.println("Action!");
+    }
 }

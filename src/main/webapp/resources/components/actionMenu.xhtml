@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:component xmlns="http://www.w3.org/1999/xhtml"
+              xmlns:h="http://xmlns.jcp.org/jsf/html"
+              xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+              xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+              xmlns:f="http://xmlns.jcp.org/jsf/core"
+              xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+              xmlns:p="http://primefaces.org/ui">
+    <cc:interface>
+        <!-- Edit Menu Item -->
+        <cc:attribute name="editValue"
+                      default="Edit"/>
+        <cc:attribute name="editAction"
+                      method-signature="java.lang.String action(java.lang.Object)"/>
+        <cc:attribute name="editOnComplete"/>
+        <cc:attribute name="editProcess"/>
+        <cc:attribute name="editUpdate"/>
+        <cc:attribute name="editRendered"
+                      type="java.lang.Boolean"
+                      default="true"/>
+    </cc:interface>
+
+    <cc:implementation>
+
+        <p:menuButton id="menubutton"
+                      value="Menu">
+
+            <c:if test="#{not empty cc.getValueExpression('editAction')}">
+                <p:menuitem id="edit"
+                            value="#{cc.attrs.editValue}"
+                            action="#{cc.attrs.editAction}"
+                            process="#{cc.attrs.editProcess}"
+                            update="#{cc.attrs.editUpdate}"
+                            oncomplete="#{cc.attrs.editOnComplete}"
+                            rendered="#{cc.attrs.editAction ne null and cc.attrs.editRendered}"/>
+            </c:if>
+
+        </p:menuButton>
+
+    </cc:implementation>
+</ui:component>
