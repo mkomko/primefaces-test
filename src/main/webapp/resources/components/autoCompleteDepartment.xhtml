@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:component xmlns="http://www.w3.org/1999/xhtml"
+              xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+              xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+              xmlns:p="http://primefaces.org/ui"
+              xmlns:tst="http://at.test.test/jsf-taglib"
+              xmlns:jsf="http://xmlns.jcp.org/jsf">
+    <cc:interface>
+        <cc:attribute name="value"
+                      required="true"
+                      type="org.primefaces.test.Department"/>
+
+        <cc:editableValueHolder name="input"/>
+
+    </cc:interface>
+    <cc:implementation>
+
+        <div id="#{cc.clientId}">
+
+            <tst:autoCompleteBase value="#{cc.attrs.value}"
+                                  converter="#{autoCompleteDepartmentConverter}">
+
+                <ui:define name="autoCompleteChildren">
+                    <cc:insertChildren/>
+
+                    <p:column headerText="Name">
+                        <span jsf:id="departmentName">#{item.name}</span>
+                    </p:column>
+                </ui:define>
+
+            </tst:autoCompleteBase>
+
+        </div>
+
+    </cc:implementation>
+</ui:component>

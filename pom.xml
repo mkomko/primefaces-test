@@ -55,6 +55,12 @@
             <artifactId>lombok</artifactId>
             <version>1.18.26</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.omnifaces</groupId>
+            <artifactId>omnifaces</artifactId>
+            <version>4.0.1</version>
+        </dependency>
     </dependencies>
 
     <repositories>

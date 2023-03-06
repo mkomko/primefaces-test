@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:o="http://omnifaces.org/ui">
+
+    <!--@elvariable id="id" type="java.lang.String"-->
+    <!--@elvariable id="header" type="java.lang.String"-->
+
+    <o:tagAttribute name="id"/>
+    <o:tagAttribute name="header" default=""/>
+
+    <p:panel id="#{id}"
+             header="#{header}">
+
+        <ui:insert/>
+
+    </p:panel>
+</ui:composition>

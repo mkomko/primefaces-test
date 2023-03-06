@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<facelet-taglib xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                version="2.2"
+                xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+                xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facelettaglibrary_2_2.xsd">
+
+    <namespace>http://at.test.test/jsf-taglib</namespace>
+
+    <tag>
+        <tag-name>panel</tag-name>
+        <source>panel.xhtml</source>
+        <attribute>
+            <name>id</name>
+            <type>java.lang.String</type>
+            <required>true</required>
+        </attribute>
+        <attribute>
+            <name>header</name>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+    <tag>
+        <tag-name>autoCompleteBase</tag-name>
+        <source>autoCompleteBase.xhtml</source>
+        <attribute>
+            <name>value</name>
+            <required>true</required>
+            <type>java.lang.Object</type>
+        </attribute>
+        <attribute>
+            <name>converter</name>
+            <type>java.faces.convert.Converter</type>
+            <required>true</required>
+        </attribute>
+    </tag>
+
+</facelet-taglib>

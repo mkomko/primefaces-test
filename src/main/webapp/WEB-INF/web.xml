@@ -6,6 +6,11 @@
         version="5.0">
 
     <context-param>
+        <param-name>jakarta.faces.FACELETS_LIBRARIES</param-name>
+        <param-value>/resources/taglib/test.taglib.xml</param-value>
+    </context-param>
+
+    <context-param>
         <param-name>jakarta.faces.STATE_SAVING_METHOD</param-name>
         <param-value>server</param-value>
     </context-param>
