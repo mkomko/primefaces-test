@@ -6,6 +6,10 @@
         version="5.0">
 
     <context-param>
+        <param-name>org.apache.myfaces.STRICT_JSF_2_FACELETS_COMPATIBILITY</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <context-param>
         <param-name>jakarta.faces.STATE_SAVING_METHOD</param-name>
         <param-value>server</param-value>
     </context-param>
