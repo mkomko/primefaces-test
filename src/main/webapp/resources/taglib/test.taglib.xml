@@ -19,20 +19,20 @@
             <name>header</name>
             <type>java.lang.String</type>
         </attribute>
+        <attribute>
+            <name>color</name>
+            <type>java.lang.String</type>
+        </attribute>
     </tag>
+
     <tag>
-        <tag-name>autoCompleteBase</tag-name>
-        <source>autoCompleteBase.xhtml</source>
-        <attribute>
-            <name>value</name>
-            <required>true</required>
-            <type>java.lang.Object</type>
-        </attribute>
-        <attribute>
-            <name>converter</name>
-            <type>java.faces.convert.Converter</type>
-            <required>true</required>
-        </attribute>
-    </tag>
+    <tag-name>icon</tag-name>
+    <source>icon.xhtml</source>
+    <attribute>
+        <name>styleClass</name>
+        <required>true</required>
+        <type>java.lang.String</type>
+    </attribute>
+</tag>
 
 </facelet-taglib>

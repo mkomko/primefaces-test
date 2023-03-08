@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:component xmlns="http://www.w3.org/1999/xhtml"
+              xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+              xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+              xmlns:test="http://xmlns.jcp.org/jsf/composite/components">
+    <cc:interface>
+        <cc:attribute name="value"
+                      required="true"
+                      type="org.primefaces.test.Department"/>
+    </cc:interface>
+
+    <cc:implementation>
+        <div id="#{cc.clientId}">
+            <test:outputIconText icon="#{icon.test} #{color.blue}"
+                                 value="#{cc.attrs.value.name}"/>
+        </div>
+    </cc:implementation>
+</ui:component>

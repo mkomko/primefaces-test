@@ -7,12 +7,15 @@
 
     <!--@elvariable id="id" type="java.lang.String"-->
     <!--@elvariable id="header" type="java.lang.String"-->
+    <!--@elvariable id="color" type="java.lang.String"-->
 
     <o:tagAttribute name="id"/>
     <o:tagAttribute name="header" default=""/>
+    <o:tagAttribute name="color" default=""/>
 
     <p:panel id="#{id}"
-             header="#{header}">
+             header="#{header}"
+             styleClass="#{not empty color ? color += '-panel' : ''}">
 
         <ui:insert/>
 

@@ -1,24 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <ui:component xmlns="http://www.w3.org/1999/xhtml"
               xmlns:cc="http://xmlns.jcp.org/jsf/composite"
               xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
               xmlns:tst="http://at.test.test/jsf-taglib">
     <cc:interface>
-        <cc:attribute name="header"
-                      type="java.lang.String"/>
-
-        <cc:attribute name="color"
-                      type="java.lang.String"/>
+        <cc:attribute name="icon"
+                      required="true"/>
+        <cc:attribute name="value"
+                      required="true"/>
     </cc:interface>
-
     <cc:implementation>
-        <tst:panel id="panel"
-                   header="#{cc.attrs.header}"
-                   color="#{cc.attrs.color}">
-
-            <cc:insertChildren/>
-
-        </tst:panel>
+        <div id="#{cc.clientId}">
+            <tst:icon styleClass="#{cc.attrs.icon}"/>
+            <span>#{cc.attrs.value}</span>
+        </div>
     </cc:implementation>
 </ui:component>

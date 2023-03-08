@@ -12,12 +12,10 @@ import java.io.Serializable;
 @ViewScoped
 public class TestView implements Serializable {
 
-    private String string;
     private Department department;
 
     @PostConstruct
     public void init() {
-        string = "Welcome to PrimeFaces!!!";
+        department = new Department(1, "Development");
     }
-
 }
