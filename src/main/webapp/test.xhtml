@@ -11,10 +11,15 @@
     </h:head>
     <h:body>
 
-        <h1>#{testView.string}</h1>
-        <h:form id="frmTest">
+        <div class="card">
+            <h:form>
+                <p:growl id="messages"/>
 
-        </h:form>
+                <p:menubar model="#{testView.model}">
+
+                </p:menubar>
+            </h:form>
+        </div>
 
     </h:body>
 </html>

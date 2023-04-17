@@ -8,6 +8,10 @@ import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Named;
 
 import lombok.Data;
+import org.primefaces.model.menu.DefaultMenuItem;
+import org.primefaces.model.menu.DefaultMenuModel;
+import org.primefaces.model.menu.DefaultSubMenu;
+import org.primefaces.model.menu.MenuModel;
 
 @Data
 @Named
@@ -24,4 +28,21 @@ public class TestView implements Serializable {
         string = "Welcome to PrimeFaces!!!";
     }
 
+    public MenuModel getModel() {
+        DefaultMenuModel menuModel = new DefaultMenuModel();
+
+        DefaultSubMenu subMenu = DefaultSubMenu.builder()
+                .label("SubMenu")
+                .build();
+
+        DefaultMenuItem menuItem = DefaultMenuItem.builder()
+                .value("MenuItem")
+                .build();
+
+        subMenu.getElements().add(menuItem);
+
+        menuModel.getElements().add(subMenu);
+
+        return menuModel;
+    }
 }
