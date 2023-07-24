@@ -25,6 +25,11 @@
         <param-value>org.apache.myfaces.config.annotation.NoInjectionAnnotationLifecycleProvider</param-value>
     </context-param>
 
+    <context-param>
+        <param-name>org.apache.myfaces.STRICT_JSF_2_ALLOW_SLASH_LIBRARY_NAME</param-name>
+        <param-value>true</param-value>
+    </context-param>
+
     <servlet>
         <servlet-name>facesServlet</servlet-name>
         <servlet-class>jakarta.faces.webapp.FacesServlet</servlet-class>
