@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:component xmlns="http://www.w3.org/1999/xhtml"
+              xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+              xmlns:p="http://primefaces.org/ui"
+              xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+              xmlns:cc="http://xmlns.jcp.org/jsf/composite">
+
+    <cc:interface>
+        <cc:attribute name="person"
+                      type="org.primefaces.test.Person"
+                      required="true"/>
+        <cc:attribute name="personData"
+                      type="org.primefaces.test.PersonData"
+                      required="true"/>
+        <cc:attribute name="fields"
+                      type="java.util.List"
+                      required="true"/>
+    </cc:interface>
+
+    <cc:implementation>
+
+        <div id="#{cc.clientId}">
+
+            <c:forEach items="#{cc.attrs.fields}"
+                       var="field">
+
+                <ui:fragment rendered="#{field.id eq 1}">
+                    <p:calendar id="expiryDate"
+                                label="Expiry date"
+                                value="#{cc.attrs.personData.expiryDate}"/>
+                </ui:fragment>
+
+            </c:forEach>
+
+        </div>
+
+    </cc:implementation>
+</ui:component>
