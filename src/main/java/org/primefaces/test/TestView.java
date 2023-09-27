@@ -23,6 +23,10 @@ public class TestView implements Serializable {
     private LocalDateTime localDateTime;
     private List<TestObject> list;
 
+    private String text1;
+    private String text2;
+    private String text3;
+
     @PostConstruct
     public void init() {
         string = "Welcome to PrimeFaces!!!";

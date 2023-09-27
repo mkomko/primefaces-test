@@ -5,16 +5,65 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
 
-    <h:head>
-        <title>PrimeFaces Test</title>
-        <h:outputScript name="test.js" />
-    </h:head>
-    <h:body>
+<h:head>
+    <title>PrimeFaces Test</title>
+    <h:outputScript name="test.js"/>
+</h:head>
+<h:body>
 
-        <h1>#{testView.string}</h1>
-        <h:form id="frmTest">
+    <h1>#{testView.string}</h1>
+    <h:form id="frmTest">
+        <p:tabView widgetVar="widget"
+                   onTabChange="return PF('widget').onTabChange(index)">
 
-        </h:form>
+            <p:tab title="1">
+                <p:outputLabel value="1" for="text1"/>
+                <p:inputText id="text1" value="#{testView.text1}" required="true"/>
+                <p:message for="text1">
+                    <p:autoUpdate/>
+                </p:message>
+            </p:tab>
+            <p:tab title="2">
+                <p:outputLabel value="2" for="text2"/>
+                <p:inputText id="text2" value="#{testView.text2}" required="true"/>
+                <p:message for="text2">
+                    <p:autoUpdate/>
+                </p:message>
+            </p:tab>
+            <p:tab title="3">
+                <p:outputLabel value="3" for="text3"/>
+                <p:inputText id="text3" value="#{testView.text3}" required="true"/>
+                <p:message for="text3">
+                    <p:autoUpdate/>
+                </p:message>
+            </p:tab>
+        </p:tabView>
 
-    </h:body>
+        <p:commandButton value="Validate manually"/>
+    </h:form>
+
+    <script type="text/javascript">
+        //<![CDATA[
+        $(function () {
+            $.extend(PF("widget"), {
+                onTabChange: function (tabIndex) {
+                    let $this = this;
+
+                    PrimeFaces.ajax.Request.handle({
+                        source: $this.id,
+                        process: $this.panelContainer.children().eq($this.cfg.selected).attr("id"),
+                        update: $this.id,
+                        oncomplete: function (xhr, status, args) {
+                            if (args.validationFailed) {
+                                alert("Validation failed!")
+                            }
+                        }
+                    });
+                }
+            });
+        });
+        //]]>
+    </script>
+
+</h:body>
 </html>
