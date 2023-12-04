@@ -14,6 +14,19 @@
         <h1>#{testView.string}</h1>
         <h:form id="frmTest">
 
+            <p:selectOneMenu value="#{testView.string}"
+                             converter="omnifaces.SelectItemsConverter">
+
+                <p:ajax event="change"/>
+
+                <f:selectItem itemValue="#{null}"
+                              itemLabel="-"/>
+                <f:selectItems value="#{testView.list}"
+                               var="item"
+                               itemValue="#{item}"/>
+
+            </p:selectOneMenu>
+
         </h:form>
 
     </h:body>
