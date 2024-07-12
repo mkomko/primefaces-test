@@ -1,22 +1,8 @@
-# Maven
+/.idea/
+/.mvn/
+/out/
 /target/
-
-# Eclipse
 .classpath
 .project
 .settings
-
-# Intellij
 *.iml
-idea/
-
-# NetBeans
-nbactions.xml
-**/nbproject/private/
-**/nbproject/Makefile-*.mk
-**/nbproject/Package-*.bash
-build/
-nbbuild/
-dist/
-nbdist/
-.nb-gradle/
