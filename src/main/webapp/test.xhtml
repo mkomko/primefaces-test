@@ -12,7 +12,15 @@
 
     <ui:define name="content">
 
+        <p:commandButton value="Show dialog"
+                         action="#{testView.showDialog}"
+                         update=":testDialog"/>
 
+    </ui:define>
+
+    <ui:define name="dialog">
+
+        <test:dialogTest id="testDialog"/>
 
     </ui:define>
 

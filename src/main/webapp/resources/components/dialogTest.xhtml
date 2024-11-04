@@ -1,0 +1,29 @@
+<ui:component xmlns="http://www.w3.org/1999/xhtml"
+              xmlns:cc="jakarta.faces.composite"
+              xmlns:ui="jakarta.faces.facelets"
+              xmlns:p="http://primefaces.org/ui"
+              xmlns:o="http://omnifaces.org/ui"
+              xmlns:f="jakarta.faces.core"
+              xmlns:test="http://xmlns.jcp.org/jsf/composite/components"
+              xmlns:h="jakarta.faces.html">
+
+    <cc:interface>
+        <cc:attribute name="update"/>
+    </cc:interface>
+
+    <cc:implementation>
+
+        <div id="#{cc.clientId}">
+
+            <test:dialogBase id="testDialog"
+                             visible="#{testDialogAction.visible}"
+                             applyAction="#{testDialogAction.apply}"
+                             cancelAction="#{testDialogAction.cancel}"
+                             update="#{cc.clientId} #{cc.attrs.update}">
+
+                <p>Content</p>
+            </test:dialogBase>
+
+        </div>
+    </cc:implementation>
+</ui:component>

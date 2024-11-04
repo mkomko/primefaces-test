@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:component xmlns="http://www.w3.org/1999/xhtml"
+              xmlns:h="jakarta.faces.html"
+              xmlns:cc="jakarta.faces.composite"
+              xmlns:ui="jakarta.faces.facelets"
+              xmlns:f="jakarta.faces.core"
+              xmlns:p="http://primefaces.org/ui"
+              xmlns:faces="jakarta.faces">
+    <cc:interface>
+
+        <cc:attribute name="applyAction"
+                      method-signature="java.lang.String method()"/>
+
+        <cc:attribute name="cancelAction"
+                      method-signature="java.lang.String method()"/>
+
+        <cc:attribute name="update"/>
+
+        <cc:attribute name="visible"
+                      required="true"
+                      default="false"
+                      type="java.lang.Boolean"/>
+
+    </cc:interface>
+    <cc:implementation>
+
+        <h:form id="dialogForm">
+
+            <p:dialog id="dialog"
+                      widgetVar="#{cc.clientId}"
+                      modal="true"
+                      responsive="true"
+                      closable="false"
+                      visible="#{cc.attrs.visible}"
+                      dynamic="false"
+                      fitViewport="true">
+
+                <f:facet name="header">
+                    <ui:fragment rendered="#{cc.attrs.visible}">
+                        <h:panelGroup id="dialogButtons">
+                            <cc:renderFacet name="buttons"/>
+                            <p:commandButton id="apply"
+                                             action="#{cc.attrs.applyAction}"
+                                             value="Apply"
+                                             update="#{cc.attrs.update}"/>
+                            <p:commandButton id="cancel"
+                                             value="Cancel"
+                                             action="#{cc.attrs.cancelAction}"
+                                             process="@this"
+                                             update="#{cc.attrs.update}"/>
+                        </h:panelGroup>
+                    </ui:fragment>
+                </f:facet>
+
+                <ui:fragment rendered="#{cc.attrs.visible}">
+
+                    <p:messages id="messages"
+                                showDetail="false"
+                                closable="false"
+                                escape="false"
+                                globalOnly="true">
+                        <p:autoUpdate/>
+                    </p:messages>
+
+                    <cc:insertChildren/>
+
+                </ui:fragment>
+
+            </p:dialog>
+
+        </h:form>
+
+    </cc:implementation>
+</ui:component>
+
