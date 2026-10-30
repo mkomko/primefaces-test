@@ -18,10 +18,15 @@ import lombok.Data;
 public class TestView implements Serializable {
 
     private String string;
+    private String completeScript = "console.log('EL oncomplete');";
     private Integer integer;
     private BigDecimal decimal;
     private LocalDateTime localDateTime;
     private List<TestObject> list;
+
+    public void testMethod() {
+        // no-op, target of p:remoteCommand
+    }
 
     @PostConstruct
     public void init() {

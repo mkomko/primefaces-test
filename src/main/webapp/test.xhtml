@@ -14,7 +14,15 @@
 
         <h1>#{testView.string}</h1>
         <h:form id="frmTest">
+            <!-- WORKS: literal oncomplete -> onco: present in generated script -->
+            <p:remoteCommand name="cmdLiteral"
+                             action="#{testView.testMethod}"
+                             oncomplete="console.log('literal oncomplete');"/>
 
+            <!-- BUG: literal + EL in oncomplete -> onco: MISSING in generated script -->
+            <p:remoteCommand name="cmdLiteralPlusEl"
+                             action="#{testView.testMethod}"
+                             oncomplete="console.log('literal part'); #{testView.completeScript}"/>
         </h:form>
 
     </h:body>
